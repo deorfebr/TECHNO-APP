@@ -1,0 +1,90 @@
+import React from 'react';
+import {
+  Activity,
+  AlarmClock,
+  Apple,
+  Award,
+  Bike,
+  BookOpen,
+  Brain,
+  Calendar,
+  Camera,
+  CheckCircle2,
+  Clock,
+  Code,
+  Coffee,
+  Compass,
+  Droplets,
+  Dumbbell,
+  Eye,
+  Flame,
+  Footprints,
+  GraduationCap,
+  Heart,
+  Laptop,
+  ListTodo,
+  Moon,
+  Music,
+  Palette,
+  PenTool,
+  Pill,
+  Rocket,
+  Shield,
+  Smile,
+  Sparkles,
+  Sun,
+  Target,
+  Wind,
+  Zap,
+  LucideProps,
+} from 'lucide-react';
+
+export const HABIT_ICONS: Record<string, React.ComponentType<LucideProps>> = {
+  BookOpen,
+  GraduationCap,
+  Code,
+  PenTool,
+  Brain,
+  Laptop,
+  Droplets,
+  Heart,
+  Apple,
+  Moon,
+  Pill,
+  Smile,
+  Activity,
+  Dumbbell,
+  Flame,
+  Footprints,
+  Zap,
+  Bike,
+  Sparkles,
+  Compass,
+  Wind,
+  Coffee,
+  Sun,
+  Eye,
+  CheckCircle2,
+  Clock,
+  Calendar,
+  AlarmClock,
+  ListTodo,
+  Shield,
+  Target,
+  Rocket,
+  Award,
+  Music,
+  Camera,
+  Palette,
+};
+
+export const AVAILABLE_ICON_NAMES = Object.keys(HABIT_ICONS);
+
+interface IconRendererProps extends LucideProps {
+  name: string;
+}
+
+export const IconRenderer: React.FC<IconRendererProps> = ({ name, ...props }) => {
+  const IconComp = HABIT_ICONS[name] || Sparkles;
+  return <IconComp {...props} />;
+};
